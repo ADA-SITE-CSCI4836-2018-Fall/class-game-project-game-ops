@@ -12,10 +12,11 @@ public class LapTimeRecord : MonoBehaviour {
     public GameObject MilliDisplay;
 
     public GameObject LapTimeBox;
-
+    public GameObject LapCount;
+    public int LapDone;
     void OnTriggerEnter()
     {
-
+        LapDone += 1;
         if (LapTimeController.secondsPassed <= 9)
         {
             SecondDisplay.GetComponent<Text>().text = "0" + LapTimeController.secondsPassed + ".";
@@ -45,6 +46,7 @@ public class LapTimeRecord : MonoBehaviour {
         LapTimeController.secondsPassed = 0;
         LapTimeController.millisecondsPassed = 0;
 
+        LapCount.GetComponent<Text>().text = "" + LapDone;
         halfWayTrigger.SetActive(true);
         lapCompleteTrigger.SetActive(false);
     }
