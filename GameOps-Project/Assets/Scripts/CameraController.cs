@@ -3,37 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-	
-    public Transform car;
-    public Vector3 cameraOffset;
-    public float cameraFollowSpeed = 10;
-    public float cameraLookSpeed = 10;
 
-    void Start()
+    public GameObject car;
+    public float carX;
+    public float carY;
+    public float carZ;
+
+    void LateUpdate()
     {
-        cameraOffset = transform.position - car.position;
-    }
+        carX = car.transform.eulerAngles.x;
+        carY = car.transform.eulerAngles.y;
+        carZ = car.transform.eulerAngles.z;
 
-    public void LookAtTarget()
-    {
-        Vector3 _lookDirection = car.position - transform.position;
-        Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-        transform.rotation = Quaternion.Lerp(transform.rotation, _rot, cameraLookSpeed * Time.deltaTime);
-    }
+        transform.eulerAngles = new Vector3(carX - carX, carY, carZ - carZ);
 
-    public void MoveToTarget()
-    {
-        Vector3 _targetPos = car.position +
-                             car.forward * cameraOffset.z +
-                             car.right * cameraOffset.x +
-                             car.up * cameraOffset.y;
-        transform.position = Vector3.Lerp(transform.position, _targetPos, cameraFollowSpeed * Time.deltaTime);
     }
-
-    private void FixedUpdate()
-    {
-        LookAtTarget();
-        MoveToTarget();
-    }
-
 }
