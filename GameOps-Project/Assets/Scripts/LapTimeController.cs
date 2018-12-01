@@ -13,10 +13,12 @@ public class LapTimeController : MonoBehaviour {
     public GameObject secondText;
     public GameObject milliseondsText;
 
+    public static float ContinuesTime;//time to perform each task in an operation like rawtime
 
     void Update()
     {
         millisecondsPassed += Time.deltaTime * 10;
+        ContinuesTime += Time.deltaTime;
         millisecondsInStrind = millisecondsPassed.ToString("F0");
         milliseondsText.GetComponent<Text>().text = "" + millisecondsInStrind;
 

@@ -14,38 +14,45 @@ public class LapTimeRecord : MonoBehaviour {
     public GameObject LapTimeBox;
     public GameObject LapCount;
     public int LapDone;
+
+    public  float ContinuesTime;
     void OnTriggerEnter()
     {
         LapDone += 1;
-        if (LapTimeController.secondsPassed <= 9)
+
+        ContinuesTime = PlayerPrefs.GetFloat("ContinuesTime");
+        if (LapTimeController.ContinuesTime <= ContinuesTime)
         {
-            SecondDisplay.GetComponent<Text>().text = "0" + LapTimeController.secondsPassed + ".";
-        }
-        else
-        {
-            SecondDisplay.GetComponent<Text>().text = "" + LapTimeController.secondsPassed + ".";
+            if (LapTimeController.secondsPassed <= 9)
+            {
+                SecondDisplay.GetComponent<Text>().text = "0" + LapTimeController.secondsPassed + ".";
+            }
+            else
+            {
+                SecondDisplay.GetComponent<Text>().text = "" + LapTimeController.secondsPassed + ".";
+            }
+
+            if (LapTimeController.minutesPassed <= 9)
+            {
+                MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeController.minutesPassed + ".";
+            }
+            else
+            {
+                MinuteDisplay.GetComponent<Text>().text = "" + LapTimeController.minutesPassed + ".";
+            }
+
+            MilliDisplay.GetComponent<Text>().text = "" + LapTimeController.millisecondsPassed.ToString("F0");
         }
 
-        if (LapTimeController.minutesPassed <= 9)
-        {
-            MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeController.minutesPassed + ".";
-        }
-        else
-        {
-            MinuteDisplay.GetComponent<Text>().text = "" + LapTimeController.minutesPassed + ".";
-        }
-
-        MilliDisplay.GetComponent<Text>().text = "" + LapTimeController.millisecondsPassed.ToString("F0");
-    
-
-    PlayerPrefs.SetInt("MinuteSave", LapTimeController.minutesPassed);
+        PlayerPrefs.SetInt("MinuteSave", LapTimeController.minutesPassed);
         PlayerPrefs.SetInt("SecondSave", LapTimeController.secondsPassed);
         PlayerPrefs.SetFloat("MilliSecSave", LapTimeController.millisecondsPassed);
+        PlayerPrefs.SetFloat("ContinuesTime", LapTimeController.ContinuesTime);
 
         LapTimeController.minutesPassed = 0;
         LapTimeController.secondsPassed = 0;
         LapTimeController.millisecondsPassed = 0;
-
+        LapTimeController.ContinuesTime =0;
         LapCount.GetComponent<Text>().text = "" + LapDone;
         halfWayTrigger.SetActive(true);
         lapCompleteTrigger.SetActive(false);
