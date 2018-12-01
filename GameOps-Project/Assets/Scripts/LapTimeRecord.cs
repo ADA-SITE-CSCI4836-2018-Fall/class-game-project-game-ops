@@ -35,6 +35,11 @@ public class LapTimeRecord : MonoBehaviour {
         }
 
         MilliDisplay.GetComponent<Text>().text = "" + LapTimeController.millisecondsPassed.ToString("F0");
+    
+
+    PlayerPrefs.SetInt("MinuteSave", LapTimeController.minutesPassed);
+        PlayerPrefs.SetInt("SecondSave", LapTimeController.secondsPassed);
+        PlayerPrefs.SetFloat("MilliSecSave", LapTimeController.millisecondsPassed);
 
         LapTimeController.minutesPassed = 0;
         LapTimeController.secondsPassed = 0;
