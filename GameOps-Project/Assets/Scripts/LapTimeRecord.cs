@@ -21,7 +21,7 @@ public class LapTimeRecord : MonoBehaviour {
 
     void Update()
     {
-        if(LapDone == 1)
+        if(LapDone == 2)
         {
             raceCompleted.SetActive(true);
         }
