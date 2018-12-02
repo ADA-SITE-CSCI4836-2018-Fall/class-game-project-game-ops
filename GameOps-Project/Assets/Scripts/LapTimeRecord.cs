@@ -16,6 +16,17 @@ public class LapTimeRecord : MonoBehaviour {
     public int LapDone;
 
     public  float ContinuesTime;
+
+    public GameObject raceCompleted;
+
+    void Update()
+    {
+        if(LapDone == 1)
+        {
+            raceCompleted.SetActive(true);
+        }
+    }
+
     void OnTriggerEnter()
     {
         LapDone += 1;
