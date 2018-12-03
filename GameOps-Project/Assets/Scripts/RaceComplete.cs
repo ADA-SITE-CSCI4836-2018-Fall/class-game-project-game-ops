@@ -5,27 +5,34 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class RaceComplete : MonoBehaviour {
 
-    public GameObject car;
-    public GameObject finishCamera;
-    public GameObject viewModes;
-    public GameObject levelMusic;
-    public GameObject completeTrigger;
-    public AudioSource finishMusic;
+    public GameObject MyCar;
+    public GameObject FinishCamera;
+    public GameObject ViewModes;
+    public GameObject LevelMusic;
+    public GameObject CompleteTrigger;
+    public AudioSource FinishMusic;
     public GameObject lapTimeController;
 
     void OnTriggerEnter()
     {
-        this.GetComponent<BoxCollider>().enabled = false;
-        car.SetActive(false);
-        completeTrigger.SetActive(false);
-        CarController.m_Topspeed = 0.0f;
-        car.GetComponent<CarController>().enabled = false;
-        car.GetComponent<CarUserControl>().enabled = false;
-        car.SetActive(true);
-        lapTimeController.SetActive(false);
-        finishCamera.SetActive(true);
-        levelMusic.SetActive(false);
-        viewModes.SetActive(false);
-        finishMusic.Play();
+        if (ModeTime.isTimeMode == true)
+        {
+            //we are on race Time mode
+        }
+        else
+        {
+            this.GetComponent<BoxCollider>().enabled = false;
+            MyCar.SetActive(false);
+            CompleteTrigger.SetActive(false);
+            CarController.m_Topspeed = 0.0f;
+            MyCar.GetComponent<CarController>().enabled = false;
+            MyCar.GetComponent<CarUserControl>().enabled = false;
+            MyCar.SetActive(true);
+            lapTimeController.SetActive(false);
+            FinishCamera.SetActive(true);
+            LevelMusic.SetActive(false);
+            ViewModes.SetActive(false);
+            FinishMusic.Play();
+        }
     }
 }
