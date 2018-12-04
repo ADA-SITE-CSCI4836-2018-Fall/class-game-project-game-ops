@@ -12,7 +12,7 @@ public class CreditFinish : MonoBehaviour {
 	IEnumerator FinishCredits()
     {
         yield return new WaitForSeconds(7);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 	
 }
