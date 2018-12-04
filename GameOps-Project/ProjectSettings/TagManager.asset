@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - AIDriver01
+  - CarPos
   layers:
   - Default
   - TransparentFX
