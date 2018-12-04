@@ -23,5 +23,8 @@ public class Unlockables : MonoBehaviour {
     {
         greenButton.SetActive(false);
         cashValue -= 100;
+        GlobalCash.TotalCash -= 100;
+        PlayerPrefs.SetInt("SavedCash", GlobalCash.TotalCash);
+        PlayerPrefs.SetInt("GreenBought", 100);
     }
 }
