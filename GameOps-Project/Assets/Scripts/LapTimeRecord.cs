@@ -29,6 +29,7 @@ public class LapTimeRecord : MonoBehaviour {
 
     void OnTriggerEnter()
     {
+        LapDone = 1;   
         LapDone += 1;
 
         ContinuesTime = PlayerPrefs.GetFloat("ContinuesTime");
