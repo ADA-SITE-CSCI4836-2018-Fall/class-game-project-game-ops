@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarChoice : MonoBehaviour {
     public GameObject RedBody;
     public GameObject BlueBody;
+    public GameObject GreenBody;
     public int CarImport;
 
     // Use this for initialization
@@ -18,6 +19,11 @@ public class CarChoice : MonoBehaviour {
         if (CarImport == 2)
         {
             BlueBody.SetActive(true);
+
+        }
+        if (CarImport == 3)
+        {
+            GreenBody.SetActive(true);
 
         }
     }

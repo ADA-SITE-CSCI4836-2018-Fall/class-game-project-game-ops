@@ -17,4 +17,10 @@ public class GlobalCars : MonoBehaviour {
         TrackWindow.SetActive(true);
     }
 
+    public void GreenCar()      // orange Car second one
+    {
+        CarType = 3;
+        TrackWindow.SetActive(true);
+    }
+
 }
