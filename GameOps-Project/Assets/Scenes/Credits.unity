@@ -248,17 +248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lead Developer
-
-
-    Programmers
-
-
-
-    QC Tester
-
-
-    Special Thanks'
+  m_Text: "Project Manager  \n\nDeveloper\n\n\nQC Tester\n\nSpecial Thanks  "
 --- !u!222 &402129244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -439,7 +429,7 @@ MonoBehaviour:
     Kanan Alizada
 
 
-    Araz Yusubov'
+    Dr. Araz Yusubov'
 --- !u!222 &573002035
 CanvasRenderer:
   m_ObjectHideFlags: 0
