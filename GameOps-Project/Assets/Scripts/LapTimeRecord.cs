@@ -13,7 +13,8 @@ public class LapTimeRecord : MonoBehaviour {
 
     public GameObject LapTimeBox;
     public GameObject LapCount;
-    public int LapDone;
+    private int MaxLaps = 2;
+    private int LapDone = 1;
 
     public  float ContinuesTime;
 
@@ -21,52 +22,55 @@ public class LapTimeRecord : MonoBehaviour {
 
     void Update()
     {
-        if(LapDone == 2)
+        if(LapDone == MaxLaps)
         {
             raceCompleted.SetActive(true);
         }
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        LapDone = 1;   
-        LapDone += 1;
-
-        ContinuesTime = PlayerPrefs.GetFloat("ContinuesTime");
-        if (LapTimeController.ContinuesTime <= ContinuesTime)
+        Debug.Log(other + " " + other + " " + other);
+        if (other.gameObject.transform.parent.parent.gameObject.tag.Equals("Player"))
         {
-            if (LapTimeController.secondsPassed <= 9)
+            if(LapDone != MaxLaps) LapDone += 1;
+
+            ContinuesTime = PlayerPrefs.GetFloat("ContinuesTime");
+            if (LapTimeController.ContinuesTime <= ContinuesTime)
             {
-                SecondDisplay.GetComponent<Text>().text = "0" + LapTimeController.secondsPassed + ".";
-            }
-            else
-            {
-                SecondDisplay.GetComponent<Text>().text = "" + LapTimeController.secondsPassed + ".";
+                if (LapTimeController.secondsPassed <= 9)
+                {
+                    SecondDisplay.GetComponent<Text>().text = "0" + LapTimeController.secondsPassed + ".";
+                }
+                else
+                {
+                    SecondDisplay.GetComponent<Text>().text = "" + LapTimeController.secondsPassed + ".";
+                }
+
+                if (LapTimeController.minutesPassed <= 9)
+                {
+                    MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeController.minutesPassed + ".";
+                }
+                else
+                {
+                    MinuteDisplay.GetComponent<Text>().text = "" + LapTimeController.minutesPassed + ".";
+                }
+
+                MilliDisplay.GetComponent<Text>().text = "" + LapTimeController.millisecondsPassed.ToString("F0");
             }
 
-            if (LapTimeController.minutesPassed <= 9)
-            {
-                MinuteDisplay.GetComponent<Text>().text = "0" + LapTimeController.minutesPassed + ".";
-            }
-            else
-            {
-                MinuteDisplay.GetComponent<Text>().text = "" + LapTimeController.minutesPassed + ".";
-            }
+            PlayerPrefs.SetInt("MinuteSave", LapTimeController.minutesPassed);
+            PlayerPrefs.SetInt("SecondSave", LapTimeController.secondsPassed);
+            PlayerPrefs.SetFloat("MilliSecSave", LapTimeController.millisecondsPassed);
+            PlayerPrefs.SetFloat("ContinuesTime", LapTimeController.ContinuesTime);
 
-            MilliDisplay.GetComponent<Text>().text = "" + LapTimeController.millisecondsPassed.ToString("F0");
+            LapTimeController.minutesPassed = 0;
+            LapTimeController.secondsPassed = 0;
+            LapTimeController.millisecondsPassed = 0;
+            LapTimeController.ContinuesTime = 0;
+            LapCount.GetComponent<Text>().text = "" + LapDone;
+            halfWayTrigger.SetActive(true);
+            lapCompleteTrigger.SetActive(false);
         }
-
-        PlayerPrefs.SetInt("MinuteSave", LapTimeController.minutesPassed);
-        PlayerPrefs.SetInt("SecondSave", LapTimeController.secondsPassed);
-        PlayerPrefs.SetFloat("MilliSecSave", LapTimeController.millisecondsPassed);
-        PlayerPrefs.SetFloat("ContinuesTime", LapTimeController.ContinuesTime);
-
-        LapTimeController.minutesPassed = 0;
-        LapTimeController.secondsPassed = 0;
-        LapTimeController.millisecondsPassed = 0;
-        LapTimeController.ContinuesTime =0;
-        LapCount.GetComponent<Text>().text = "" + LapDone;
-        halfWayTrigger.SetActive(true);
-        lapCompleteTrigger.SetActive(false);
     }
 }
