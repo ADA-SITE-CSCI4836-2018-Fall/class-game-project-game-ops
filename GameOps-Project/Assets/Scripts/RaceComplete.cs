@@ -12,6 +12,7 @@ public class RaceComplete : MonoBehaviour {
     public GameObject CompleteTrigger;
     public AudioSource FinishMusic;
     public GameObject lapTimeController;
+    public GameObject EndScreen;
 
     void OnTriggerEnter()
     {
@@ -35,6 +36,7 @@ public class RaceComplete : MonoBehaviour {
             FinishMusic.Play();
             GlobalCash.TotalCash += 100;
             PlayerPrefs.SetInt("SavedCash",GlobalCash.TotalCash);
+            EndScreen.SetActive(true);
         }
     }
 }

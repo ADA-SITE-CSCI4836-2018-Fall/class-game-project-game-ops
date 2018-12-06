@@ -17,6 +17,6 @@ public class GlobalCash : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         CashValue = TotalCash;
-        CashDisplay.GetComponent<Text>().text = "Cash $" + CashValue;
+        CashDisplay.GetComponent<Text>().text = "Total Cash $" + CashValue;
 	}
 }
