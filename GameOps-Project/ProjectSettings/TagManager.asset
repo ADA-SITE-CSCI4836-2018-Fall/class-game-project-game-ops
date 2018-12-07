@@ -44,6 +44,7 @@ TagManager:
   - 35
   - 36
   - PlayerCollider
+  - SpeedValue
   layers:
   - Default
   - TransparentFX

@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
         Text speedValue;
-        public Text value;
+        public static Text value;
         // Use this for initialization
         private void Start()
         {

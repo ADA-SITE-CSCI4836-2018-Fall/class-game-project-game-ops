@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 
 public class RaceManager : MonoBehaviour {
 
@@ -47,6 +48,8 @@ public class RaceManager : MonoBehaviour {
         StartCountdown.goAudio = playerOBJ.transform.GetChild(7).GetChild(0).GetChild(1).GetComponent<AudioSource>(); //Go Audio
         StartCountdown.LevelMusic = playerOBJ.transform.GetChild(7).GetChild(1).GetChild(0).GetComponent<AudioSource>(); //Level Music
         //End Setupy
+        CarController.value = GameObject.FindGameObjectWithTag("SpeedValue").GetComponent<Text>();
+        
 
         carOrder = new Car[allAICarsOBJ.Length + 1];
         InvokeRepeating("ManualUpdate", 0.5f, 0.5f);
