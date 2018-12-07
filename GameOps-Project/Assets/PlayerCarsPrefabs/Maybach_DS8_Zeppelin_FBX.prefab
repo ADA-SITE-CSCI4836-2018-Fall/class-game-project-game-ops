@@ -314,7 +314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1392236229009778
 GameObject:
   m_ObjectHideFlags: 1
@@ -4385,6 +4385,7 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
+  value: {fileID: 0}
 --- !u!114 &114812292587088268
 MonoBehaviour:
   m_ObjectHideFlags: 1

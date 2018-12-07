@@ -3464,6 +3464,7 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
+  value: {fileID: 0}
 --- !u!114 &114395316456046378
 MonoBehaviour:
   m_ObjectHideFlags: 1

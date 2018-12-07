@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -54,7 +55,8 @@ namespace UnityStandardAssets.Vehicles.Car
         public float MaxSpeed{get { return m_Topspeed; }}
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
-
+        Text speedValue;
+        public Text value;
         // Use this for initialization
         private void Start()
         {
@@ -71,6 +73,16 @@ namespace UnityStandardAssets.Vehicles.Car
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
         }
 
+       
+        public void getSpeedValue()
+        {
+            speedValue = GetComponent<Text>();
+        }
+
+        void Update()
+        {
+            value.text = CurrentSpeed.ToString("f0") + "-KM/H";
+        }
 
         private void GearChanging()
         {
