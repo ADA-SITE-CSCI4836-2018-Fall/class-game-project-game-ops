@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : MonoBehaviour {
-
+    
     public int currentWaypoint;
     public int currentLap;
     public Transform lastWaypoint;
@@ -13,6 +13,7 @@ public class Car : MonoBehaviour {
     private static int LAP_VALUE = 10000;
     private int cpt_waypoint = 0;
 
+    
     // Use this for initialization
     public void Initialize()
     {

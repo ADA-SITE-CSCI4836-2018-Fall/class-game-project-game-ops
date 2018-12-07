@@ -7,9 +7,11 @@ public class HalfWayTrigger : MonoBehaviour {
     public GameObject halfWayTrigger;
     public GameObject lapCompleteTrigger;
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
     {
-        halfWayTrigger.SetActive(false);
-        lapCompleteTrigger.SetActive(true);
+        if (other.gameObject.transform.parent.parent.gameObject.tag.Equals("Player")) {
+            halfWayTrigger.SetActive(false);
+            lapCompleteTrigger.SetActive(true);
+        }
     }
 }

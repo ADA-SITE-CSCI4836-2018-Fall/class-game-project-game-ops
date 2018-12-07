@@ -5,22 +5,22 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class RaceComplete : MonoBehaviour {
 
-    public GameObject MyCar;
-    public GameObject FinishCamera;
-    public GameObject ViewModes;
-    public GameObject LevelMusic;
+    public static GameObject MyCar;
+    public static GameObject FinishCamera;
+    public static GameObject ViewModes;
+    public static GameObject LevelMusic;
     public GameObject CompleteTrigger;
-    public AudioSource FinishMusic;
+    public static AudioSource FinishMusic;
     public GameObject lapTimeController;
     public GameObject EndScreen;
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
         if (ModeTime.isTimeMode == true)
         {
             //we are on race Time mode
         }
-        else
+        else if(other.gameObject.transform.parent.parent.gameObject.tag.Equals("Player"))
         {
             this.GetComponent<BoxCollider>().enabled = false;
             MyCar.SetActive(false);

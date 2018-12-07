@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class StartCountdown : MonoBehaviour {
 
     public GameObject countDown;
-    public AudioSource getReadyAudio;
-    public AudioSource goAudio;
+    public static AudioSource getReadyAudio;
+    public static AudioSource goAudio;
     public GameObject lapTimer;
     public GameObject carControls;
-    public AudioSource LevelMusic;
+    public static AudioSource LevelMusic;
 
     void Start()
     {

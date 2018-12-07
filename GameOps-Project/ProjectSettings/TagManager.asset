@@ -43,6 +43,7 @@ TagManager:
   - 34
   - 35
   - 36
+  - PlayerCollider
   layers:
   - Default
   - TransparentFX
