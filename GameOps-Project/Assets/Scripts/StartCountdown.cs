@@ -12,6 +12,12 @@ public class StartCountdown : MonoBehaviour {
     public GameObject carControls;
     public static AudioSource LevelMusic;
 
+    void Awake()
+    {
+        getReadyAudio = null;
+        goAudio = null;
+        LevelMusic = null;
+    }
     void Start()
     {
         StartCoroutine(CountStart());
@@ -41,4 +47,5 @@ public class StartCountdown : MonoBehaviour {
         lapTimer.SetActive(true);
         carControls.SetActive(true);
     }
+
 }

@@ -8,11 +8,13 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         //public CarController car; // reference to the car controller, must be dragged in inspector
         //public CarAIControl AIDriver01;
-        
+        private GameObject[] aiDrivers;
+        GameObject player;
+
         private void Start()
         {
-            GameObject[] aiDrivers = GameObject.FindGameObjectsWithTag("AIDriver01");
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            aiDrivers = GameObject.FindGameObjectsWithTag("AIDriver01");
+            player = GameObject.FindGameObjectWithTag("Player");
             Debug.Log("PLAYER CAR NAME!!!!!!: " + player.name);
             foreach(GameObject obj in aiDrivers)
             {

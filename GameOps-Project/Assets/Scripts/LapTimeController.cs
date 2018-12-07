@@ -15,6 +15,15 @@ public class LapTimeController : MonoBehaviour {
 
     public static float ContinuesTime;//time to perform each task in an operation like rawtime
 
+    void Awake()
+    {
+        minutesPassed = 0;
+        secondsPassed = 0;
+        millisecondsPassed = 0;
+        millisecondsInStrind = "";
+        ContinuesTime = 0;
+    }
+
     void Update()
     {
         millisecondsPassed += Time.deltaTime * 10;

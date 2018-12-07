@@ -14,6 +14,15 @@ public class RaceComplete : MonoBehaviour {
     public GameObject lapTimeController;
     public GameObject EndScreen;
 
+    void OnDestroy()
+    {
+        MyCar = null;
+        FinishCamera = null;
+        ViewModes = null;
+        LevelMusic = null;
+        FinishMusic = null;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (ModeTime.isTimeMode == true)

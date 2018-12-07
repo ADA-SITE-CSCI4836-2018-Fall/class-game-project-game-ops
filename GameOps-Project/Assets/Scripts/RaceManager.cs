@@ -11,7 +11,7 @@ public class RaceManager : MonoBehaviour {
     public Car[] carOrder;
     private string selectedCar = "";
 
-    public void Awake()
+    public void Start()
     {
         selectedCar = CarSelection.selectedCar;
         foreach(GameObject obj in PlayerCarPrefabs)

@@ -7,7 +7,14 @@ public class PauseM : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
+    public bool asdfg;
     public GameObject pauseMenuUI;
+    
+    void Awake()
+    {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
 
     void Update()
     {
@@ -32,12 +39,11 @@ public class PauseM : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         GameIsPaused = true;
     }
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -46,4 +52,5 @@ public class PauseM : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 
     }
+    
 }

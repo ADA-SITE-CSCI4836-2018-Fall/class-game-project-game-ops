@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2804953, g: 0.29401943, b: 0.30730343, a: 1}
+  m_IndirectSpecularColor: {r: 0.28158912, g: 0.29523468, b: 0.3086319, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1139,6 +1139,7 @@ GameObject:
   - component: {fileID: 1414506456}
   - component: {fileID: 1414506455}
   - component: {fileID: 1414506454}
+  - component: {fileID: 1414506457}
   m_Layer: 5
   m_Name: PlayGame
   m_TagString: Untagged
@@ -1204,8 +1205,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1658031396}
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 0}
+        m_MethodName: LoadCarSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1251,6 +1252,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1414506452}
   m_CullTransparentMesh: 0
+--- !u!114 &1414506457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414506452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe07ddaf9788094eaf850f0ed800b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1430599610
 GameObject:
   m_ObjectHideFlags: 0
