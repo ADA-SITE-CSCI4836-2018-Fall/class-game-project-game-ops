@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 23599810405929522}
   - component: {fileID: 65054365252026296}
   - component: {fileID: 114264812628812434}
+  - component: {fileID: 114176049114640234}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -3908,6 +3909,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ebd8e4d74df014bb367e8b9660fb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114176049114640234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484218492721624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280c41e3f4cb5418aa3202f2cab31fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalCam: {fileID: 1313560736118258}
+  FarCam: {fileID: 1550845295424434}
+  FPCam: {fileID: 1179194798405090}
+  CamMode: 0
 --- !u!114 &114264812628812434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4009,7 +4025,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
-  value: {fileID: 0}
 --- !u!114 &114677732752329838
 MonoBehaviour:
   m_ObjectHideFlags: 1
