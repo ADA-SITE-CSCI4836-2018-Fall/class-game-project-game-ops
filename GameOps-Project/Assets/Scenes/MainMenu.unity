@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28158912, g: 0.29523468, b: 0.3086319, a: 1}
+  m_IndirectSpecularColor: {r: 0.56428176, g: 0.55134034, b: 0.52639484, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -495,8 +495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -120.75, y: 30}
-  m_SizeDelta: {x: 558.5, y: 89.2}
+  m_AnchoredPosition: {x: -8, y: 30}
+  m_SizeDelta: {x: 784, y: 89.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &288304479
 MonoBehaviour:
@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 371697714}
   - component: {fileID: 371697713}
   - component: {fileID: 371697712}
+  - component: {fileID: 371697715}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -613,7 +614,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 371697713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 371697715}
+        m_MethodName: Quit1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &371697713
@@ -650,6 +662,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 371697710}
   m_CullTransparentMesh: 0
+--- !u!114 &371697715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 371697710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d646cdaf14ddacb40a3b1e4b51c78574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &382200971
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Random
+  m_Text: 'Settings
 
 '
 --- !u!222 &602120083
@@ -1657,7 +1680,7 @@ GameObject:
   - component: {fileID: 2001928491}
   - component: {fileID: 2001928490}
   m_Layer: 5
-  m_Name: RandomGame
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

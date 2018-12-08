@@ -49,8 +49,7 @@ public class PauseM : MonoBehaviour
 
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-
+        Application.Quit();
     }
     
 }
